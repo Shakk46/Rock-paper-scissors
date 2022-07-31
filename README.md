@@ -1,2 +1,3 @@
 # Rock-paper-scissors
-Pretty self explanatory 
+Pretty self explanatory. The game on JS
+
