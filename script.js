@@ -3,42 +3,59 @@ function getComputerChoice () {
     return arr[Math.floor(Math.random() * arr.length)]
 }
 
-let askPlayer = prompt('Whats your choice?')
+let computerScore = 0;
+let playerScore = 0;
+
+function getPlayerChoice() {
+    return prompt('What is your choice?')
+}
 
 function roundRockPS (computerChoice, playerChoice) {
     if (computerChoice == 'rock') {
-        if (playerChoice == 'paper') {
+            if (playerChoice == 'paper') {
+            playerScore++
             return 'rock. You won!!!'
-        }
-        if (playerChoice == 'rock') {
+            }
+            if (playerChoice == 'rock') {
             return "rock. It's a draw!!!"
-        }
-        if (playerChoice == 'scissors') {
+            }
+            if (playerChoice == 'scissors') {
+            computerScore++
             return 'rock. You lost!!!'
-        }
+            }
     }
     else if (computerChoice == 'paper') {
-        if (playerChoice == 'scissors') {
+            if (playerChoice == 'scissors') {
+            playerScore++
             return 'paper. You won!!!'
-        }
-        if (playerChoice == 'paper') {
+            }
+            if (playerChoice == 'paper') {
             return "paper.It's a draw!!!"
-        }
-        if (playerChoice == 'rock') {
+            }
+            if (playerChoice == 'rock') {
+            computerScore++
             return 'paper. You lost!!!'
-        }
+            }
     }
     else if (computerChoice == 'scissors') {
-        if (playerChoice == 'rock') {
+            if (playerChoice == 'rock') {
+            playerScore++
             return 'scissors. You won!!!'
-        }
-        if (playerChoice == 'scissors') {
+            }
+            if (playerChoice == 'scissors') {
             return "scissors. It's a draw!!!"
-        }
-        if (playerChoice == 'paper') {
+            }
+            if (playerChoice == 'paper') {
+            computerScore++
             return 'scissors.You lost!!!'
-        }
+            }
     }
 }
 
-alert(roundRockPS(getComputerChoice(),askPlayer));
+function game () {
+    for (let i = 0; i < 5; i++) {
+        roundRockPS(getComputerChoice(),getPlayerChoice())
+        alert('Your score: Computer: ' + computerScore + '' + 'You: ' + playerScore)
+    }
+}
+game();
