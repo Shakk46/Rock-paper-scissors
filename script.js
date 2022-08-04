@@ -54,8 +54,13 @@ function roundRockPS (computerChoice, playerChoice) {
 
 function game () {
     for (let i = 0; i < 5; i++) {
-        roundRockPS(getComputerChoice(),getPlayerChoice())
+        alert(roundRockPS(getComputerChoice(),getPlayerChoice()))
         alert('Your score: Computer: ' + computerScore + '' + 'You: ' + playerScore)
+    }
+    if (computerScore > playerScore) {
+        alert('You lost!!!')
+    }else {
+        alert('You won!!!')
     }
 }
 game();
