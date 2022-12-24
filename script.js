@@ -6,9 +6,14 @@ function getComputerChoice () {
 let computerScore = 0;
 let playerScore = 0;
 
-function getPlayerChoice() {
-    return prompt('What is your choice?')
-}
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+
+rock.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'rock')));
+paper.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'paper')));
+scissors.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'scissors')));
 
 function roundRockPS (computerChoice, playerChoice) {
     if (computerChoice == 'rock') {
@@ -16,10 +21,10 @@ function roundRockPS (computerChoice, playerChoice) {
             playerScore++
             return 'rock. You won!!!'
             }
-            if (playerChoice == 'rock') {
+            else if (playerChoice == 'rock') {
             return "rock. It's a draw!!!"
             }
-            if (playerChoice == 'scissors') {
+            else if (playerChoice == 'scissors') {
             computerScore++
             return 'rock. You lost!!!'
             }
@@ -51,16 +56,3 @@ function roundRockPS (computerChoice, playerChoice) {
             }
     }
 }
-
-function game () {
-    for (let i = 0; i < 5; i++) {
-        alert(roundRockPS(getComputerChoice(),getPlayerChoice()))
-        alert('Your score: Computer: ' + computerScore + '' + 'You: ' + playerScore)
-    }
-    if (computerScore > playerScore) {
-        alert('You lost!!!')
-    }else {
-        alert('You won!!!')
-    }
-}
-game();

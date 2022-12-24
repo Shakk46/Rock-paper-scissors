@@ -3,20 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="script.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock-Paper-Scissors</title>
 </head>
+
 <body>
-    <button class="rock">
-        Rock
-    </button>
-    <button class="paper">
-        Paper
-    </button>
-    <button class="scissors">
-        
-    </button>
+
+    <div class="container">
+        <div class="game-box">
+            
+            <div class="score-flex">
+                
+                <div class="score">
+                    Your score is:
+                    <p id="score__player"></p>
+                </div>
+
+                <div class="score">
+                    Computer's score is:
+                    <p id="score__computer"></p>
+                </div>
+
+            </div>
+
+            <div class="result">
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="rock button">
+                    Rock
+                </button>
+
+                <button class="paper button">
+                    Paper
+                </button>
+
+                <button class="scissors button">
+                    Scissors
+                </button>
+
+            </div>
+
+        </div>        
+    </div>
     
-    <script src="script.js"></script>
 </body>
 </html>
