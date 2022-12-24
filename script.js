@@ -9,50 +9,74 @@ let playerScore = 0;
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
+const playerScoreIn = document.querySelector('#score__player');
+const computerScoreIn = document.querySelector('#score__computer');
+const result = document.querySelector('#result');
+const span = document.querySelector('#span')
 
 
-rock.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'rock')));
-paper.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'paper')));
-scissors.addEventListener('click', () => alert(roundRockPS(getComputerChoice(), 'scissors')));
+rock.addEventListener('click', () => roundRockPS(getComputerChoice(), 'rock'));
+paper.addEventListener('click', () => roundRockPS(getComputerChoice(), 'paper'));
+scissors.addEventListener('click', () => roundRockPS(getComputerChoice(), 'scissors'));
+
+
 
 function roundRockPS (computerChoice, playerChoice) {
     if (computerChoice == 'rock') {
             if (playerChoice == 'paper') {
-            playerScore++
-            return 'rock. You won!!!'
+                playerScoreIn.textContent = ++playerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'WON'
+                span.style.color = 'green'
             }
             else if (playerChoice == 'rock') {
-            return "rock. It's a draw!!!"
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'DRAW'
+                span.style.color = 'grey'
             }
             else if (playerChoice == 'scissors') {
-            computerScore++
-            return 'rock. You lost!!!'
+                computerScoreIn.textContent = ++computerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'LOSS'
+                span.style.color = 'red'
             }
     }
     else if (computerChoice == 'paper') {
             if (playerChoice == 'scissors') {
-            playerScore++
-            return 'paper. You won!!!'
+                playerScoreIn.textContent = ++playerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'WON'
+                span.style.color = 'green'
             }
             if (playerChoice == 'paper') {
-            return "paper.It's a draw!!!"
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'DRAW'
+                span.style.color = 'grey'
             }
             if (playerChoice == 'rock') {
-            computerScore++
-            return 'paper. You lost!!!'
+                computerScoreIn.textContent = ++computerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'LOSS'
+                span.style.color = 'red'
             }
     }
     else if (computerChoice == 'scissors') {
             if (playerChoice == 'rock') {
-            playerScore++
-            return 'scissors. You won!!!'
+                playerScoreIn.textContent = ++playerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'WON'
+                span.style.color = 'green'
             }
             if (playerChoice == 'scissors') {
-            return "scissors. It's a draw!!!"
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'DRAW'
+                span.style.color = 'grey'
             }
             if (playerChoice == 'paper') {
-            computerScore++
-            return 'scissors.You lost!!!'
+                computerScoreIn.textContent = ++computerScore
+                result.textContent = `${playerChoice.toUpperCase()} vs ${computerChoice.toUpperCase()}`
+                span.textContent = 'LOSS'
+                span.style.color = 'red'
             }
     }
 }
